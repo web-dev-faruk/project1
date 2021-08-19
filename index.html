@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallary</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile_style.css">
+    <link rel="stylesheet" href="css/tablet_style.css">
+    <link rel="stylesheet" href="css/pc_style.css">
+</head>
+<body>
+    <div class="header">
+            <div class="site-logo">
+                <img src="image/cropped-searchstall-1.png" alt="">
+            </div>
+            <div class="search">
+                    <input type="search" aria-label="Search through site content" placeholder="Search...">
+                    <button type="submit"><i class="fas fa-search"></i></button>  
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <div id="menu-bar" class="menu-bar">
+                <menu class="menu" id="mymenu">
+                    <i id="menu-icon" class="menu-icon fas fa-bars" onclick="myFunction()"></i>
+                    <i class="icon-links far fa-minus-square" onclick="myFunction()"></i>
+                    <a class="links" href="">Home</a>
+                    <a class="links" href="">Posts</a>
+                    <a class="links" href="">Categories</a>
+                    <a class="links" href="">Login</a>
+                    <a class="links" href="">About Us</a>
+                    <a class="links" href="">Privacy Policy</a>
+                    <a class="links" href="">Terms & Conditions</a>
+                </menu>
+            </div>
+    </div>
+    <div class="audio-player">
+        <button id="audio-b1" class="audio-b1" onclick="myFunctionButton()">Play</button>
+        <button id="audio-b2" class="audio-b2" onclick="myFunctionButton2()">Pause</button>
+        <audio id="audiopl" class="audiopl" controls>
+            <source id="myAudio" src="audio/kodom gase kano.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+
+    <script src="js/pc_script.js"></script>
+    <script>
+        // menu script start
+        function myFunction() {
+            var x = document.getElementById("mymenu");
+            if (x.className === "menu") {
+                x.className += " responsivemenu";
+            } else{
+                x.className = "menu";
+                }
+        }
+        // menu script end
+        // audio play button
+        function myFunctionButton(){
+            var y= document.getElementById("audio-b1");
+            if (y.className === "audio-b1") {
+                y.className += " audio-b1r";
+            }else{
+                y.className = "audio-b1";
+            }
+            var z= document.getElementById("audio-b2");
+            if (z.className ==="audio-b2") {
+                z.className +=" audio-b2r";
+            }else{
+                z.className = "audio-b2";
+            }
+            var av = document.getElementById("audiopl");
+            if (av.className ==="audiopl") {
+                av.className +=" audioplr";
+            }else{
+                av.className = "audiopl";
+            }
+        }
+        // audio play button end 
+        // audio stop button start
+        function myFunctionButton2() {
+            var myAudio = document.getElementById("audiopl");
+            var cb = document.getElementById("audio-b2");
+            if (cb.innerHTML==="Pause") {
+                cb.innerHTML="Play";
+            }else{
+                cb.innerHTML="Pause";
+            }
+            return myAudio.paused ? myAudio.play() : myAudio.pause();
+            };
+        // audion stop button end
+    </script>
+</body>
+</html>
