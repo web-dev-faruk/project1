@@ -12,7 +12,7 @@
     } 
     .header:hover{
       box-shadow:inset 1px 1px 10px rgb(194, 194, 194);
-      transform: scale(1.02);
+      
     }
     /* site logo start */
     .site-logo{z-index: -1;
